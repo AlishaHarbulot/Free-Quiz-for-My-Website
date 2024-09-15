@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Could I Be Autistic? Take this quick quiz to determine if you may have traits of autism as an undiagnosed adult.">
+    <title>Could I Be Autistic? Quick Quiz for Undiagnosed Adults</title>
+    <style>
+        /* Dark theme for the quiz */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 20px;
+            padding: 0 10px;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .description {
+            font-size: 18px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Style for the slider */
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.15s ease-in-out;
+        }
+
+        input[type="range"]:hover {
+            opacity: 1;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #d1c4e9; /* Soft pastel purple */
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #d1c4e9; /* Soft pastel purple */
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .result-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .disclaimer {
+            color: #ff6f61;
+            font-size: 14px;
+        }
+
+        /* Styling the form buttons */
+        button {
+            background-color: #d1c4e9;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #b39ddb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Could I Be Autistic? Quick Quiz for Undiagnosed Adults</h1>
+    
+    <div class="description">
+        Take this quick quiz to determine if you may have traits of autism as an undiagnosed adult. The leftmost does not seem to sound like you at all, and the rightmost resonates deeply with you.
+    </div>
+
+    <form id="quizForm">
+        <div>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="non-binary">Non-binary</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+            </select>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <label for="age">Age Range:</label>
+            <select id="age" name="age" required>
+                <option value="18-25">18-25</option>
+                <option value="26-35">26-35</option>
+                <option value="36-50">36-50</option>
+                <option value="50+">50+</option>
+            </select>
+        </div>
+
+        <!-- All 26 questions displayed on one page -->
+        <div class="question">1. Most of your life you remember attempting to understand what others are thinking or feeling, they always seem to be an enigma.</div>
+        <input type="range" name="q1" min="1" max="5" required>
+
+        <div class="question">2. Social events mean; polishing up on learned social skills, otherwise anxiety sets in.</div>
+        <input type="range" name="q2" min="1" max="5" required>
+
+        <div class="question">3. Being by yourself seems better suited than making new friends.</div>
+        <input type="range" name="q3" min="1" max="5" required>
+
+        <div class="question">4. I need to work extra hard to ensure I don't come across too blunt, rude, or plain uninterested.</div>
+        <input type="range" name="q4" min="1" max="5" required>
+
+        <div class="question">5. Conveying what I feel or need in actual words has never truly been easy.</div>
+        <input type="range" name="q5" min="1" max="5" required>
+
+        <div class="question">6. I find it so hard to understand my own emotional conundrums.</div>
+        <input type="range" name="q6" min="1" max="5" required>
+
+        <div class="question">7. So sarcasm understanding is not my strongest suit. In fact, I tend to take things a little too literally.</div>
+        <input type="range" name="q7" min="1" max="5" required>
+
+        <div class="question">8. Sudden plan changes or my routine changes make me uncomfortable and anxious.</div>
+        <input type="range" name="q8" min="1" max="5" required>
+
+        <div class="question">9. I want to be spontaneous but I often revert to my comfort zone and forgo impromptu plans.</div>
+        <input type="range" name="q9" min="1" max="5" required>
+
+        <div class="question">10. It took me ages to realize (and is a struggle remembering) that I can talk over people and those little social "rules" that everyone else seems to have no problem following.</div>
+        <input type="range" name="q10" min="1" max="5" required>
+
+        <div class="question">11. Why must we look in peoples' eyes!</div>
+        <input type="range" name="q11" min="1" max="5" required>
+
+        <div class="question">12. I have issues gauging peoples space.</div>
+        <input type="range" name="q12" min="1" max="5" required>
+
+        <div class="question">13. However, I have big issues with people in my space. Don't like being touched unexpectedly.</div>
+        <input type="range" name="q13" min="1" max="5" required>
+
+        <div class="question">14. I tend to be the only one that notices and obsesses about certain small details or patterns.</div>
+        <input type="range" name="q14" min="1" max="5" required>
+
+        <div class="question">15. I can be very sensitive to smells, I tend to point out smells when others barely smell anything.</div>
+        <input type="range" name="q15" min="1" max="5" required>
+
+        <div class="question">16. It is very hard for me to ignore the sound that the fridge, the fan and the tap makes.</div>
+        <input type="range" name="q16" min="1" max="5" required>
+
+        <div class="question">17. I have an object I find myself touching to self-sooth.</div>
+        <input type="range" name="q17" min="1" max="5" required>
+
+        <div class="question">18. I constantly control the urge to move impulsively.</div>
+        <input type="range" name="q18" min="1" max="5" required>
+
+        <div class="question">19. I harbor immense amounts of passion for my hobbies, I can get quite immersed in them for long periods of time.</div>
+        <input type="range" name="q19" min="1" max="5" required>
+
+        <div class="question">20. I find it very comforting to be careful in planning before execution.</div>
+        <input type="range" name="q20" min="1" max="5" required>
+
+        <div class="question">21. I found and formed ways to hide a lot to 'fit in'.</div>
+        <input type="range" name="q21" min="1" max="5" required>
+
+        <div class="question">22. I practice in front of a mirror or by myself on how I would communicate.</div>
+        <input type="range" name="q22" min="1" max="5" required>
+
+        <div class="question">23. I learnt a lot through tv shows and observing impressive people around me.</div>
+        <input type="range" name="q23" min="1" max="5" required>
+
+        <div class="question">24. It's harder for me to be loud and expressive.</div>
+        <input type="range" name="q24" min="1" max="5" required>
+
+        <div class="question">25. I feel like I have a mask on in order to fit in to social situations that makes people think I cope well socially but inside I'm a bit of an awkward mess.</div>
+        <input type="range" name="q25" min="1" max="5" required>
+
+        <div class="question">26. I think I may be autistic and I am on a journey to accept and to heal myself.</div>
+        <input type="range" name="q26" min="1" max="5" required>
+
+        <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <!-- Result Section -->
+    <div class="result-section" id="resultSection">
+        <h2>Your Quiz Result</h2>
+        <p id="result"></p>
+        <p class="disclaimer">Disclaimer: This quiz is for educational purposes only. Please do further research or book a consultation with a professional for a proper diagnosis.</p>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById('quizForm');
+            let score = 0;
+            let totalQuestions = 26;
+
+            // Loop through form elements to get quiz answers
+            for (let i = 1; i <= totalQuestions; i++) {
+                score += parseInt(form['q' + i].value);
+            }
+
+            let resultText = '';
+            if (score / totalQuestions >= 3) {
+                resultText = 'Based on your answers, it is likely that you may have traits of autism. You may want to explore this further. If this is new information, know that this could be your first step to truly helping yourself and healing. You may find it hard to reach out and express yourself but there are many tools to help you through this. Either contact us or a therapist for an actual diagnosis and a plan to better understand yourself. This may be a hard journey and I truly wish you luck. Head to our page on psychology & healing for further reading on the topic.';
+            } else {
+                resultText = 'Based on your answers, it is less likely that you have traits of autism. It does not mean you are not struggling, if that is what landed you here. Please feel free to reach out to us or any therapist to help you with understanding yourself better. You can also look in to our Psychology and Healing category to look for what may resonate with you better. Good Luck.';
+            }
+
+            // Show result section and display the result
+            document.getElementById('result').innerText = resultText;
+            document.getElementById('resultSection').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
